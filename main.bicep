@@ -13,7 +13,7 @@ param storageAccountType string = 'Standard_LRS'
 param location string = resourceGroup().location
 
 @description('Location for Application Insights')
-param appInsightsLocation string
+param South India string
 
 @description('The language worker runtime to load in the function app.')
 @allowed([
@@ -101,7 +101,7 @@ resource functionApp 'Microsoft.Web/sites@2021-03-01' = {
 
 resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
   name: applicationInsightsName
-  location: appInsightsLocation
+  location: South India
   kind: 'web'
   properties: {
     Application_Type: 'web'
