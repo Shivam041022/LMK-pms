@@ -27,7 +27,6 @@ steps:
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
 
-steps:
 - task: AzureCLI@2
   inputs:
     azureSubscription: "web-connection"
