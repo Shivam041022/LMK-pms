@@ -6,7 +6,7 @@ name: Deploy Bicep files
 variables:
   vmImageName: 'ubuntu-latest'
 
-  azureServiceConnection: '<web-connection>'
+  azureServiceConnection: '<FA-conn>'
   resourceGroupName: 'APIM-Test-Rg'
   location: '<South India>'
   templateFile: './main.bicep'
@@ -17,7 +17,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: "web-connection"
+    azureResourceManagerConnection: "FA-conn"
     action: 'Create Or Update Resource Group'
     resourceGroupName: '$(resourceGroupName)'
     location: '$(location)'
@@ -29,7 +29,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: "web-connection"
+    azureSubscription: "FA-conn"
     scriptType: bash
     scriptLocation: inlineScript
     useGlobalConfig: false
