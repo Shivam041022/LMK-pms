@@ -1,0 +1,41 @@
+trigger:
+- main
+
+name: Deploy Bicep files
+
+variables:
+  vmImageName: 'ubuntu-latest'
+
+  azureServiceConnection: '<web-connection>'
+  resourceGroupName: 'APIM-Test-Rg'
+  location: '<South India>'
+  templateFile: './main.bicep'
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: "(web-connection)""
+
+)'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: '$(resourceGroupName)'
+    location: '$(location)'
+    templateLocation: 'Linked artifact'
+    csmFile: '$(templateFile)'
+    overrideParameters: '-storageAccountType Standard_LRS'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: "web-connection"
+    scriptType: bash
+    scriptLocation: inlineScript
+    useGlobalConfig: false
+    inlineScript: |
+      az --version
+      az deployment group create --resource-group "South India" --template-file $(templateFile)
