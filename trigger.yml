@@ -8,7 +8,7 @@ variables:
 
   azureServiceConnection: '<FA-conn>'
   resourceGroupName: 'APIM-Test-Rg'
-  location: '<South India>'
+  location: 'South india'
   templateFile: './main.bicep'
 pool:
   vmImage: "ubuntu-latest"
@@ -35,4 +35,4 @@ steps:
     useGlobalConfig: false
     inlineScript: |
       az --version
-      az deployment group create --resource-group "South India" --template-file $(templateFile)
+      az deployment group create --resource-group "South india" --template-file $(templateFile)
