@@ -6,7 +6,7 @@ name: Deploy Bicep files
 variables:
   vmImageName: 'ubuntu-latest'
 
-  azureServiceConnection: '<FA-conn>'
+  azureServiceConnection: 'Functest'
   resourceGroupName: 'Test'
   location: "East US"
   templateFile: './main.bicep'
@@ -17,7 +17,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: "FA-conn"
+    azureResourceManagerConnection: "Functest"
     action: 'Create Or Update Resource Group'
     resourceGroupName: '$(resourceGroupName)'
     location: '$(location)'
