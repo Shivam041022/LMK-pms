@@ -5,8 +5,10 @@
       "location": {
         "value": "East US"
       },
-      "resourceGroupName": {
-        "value": "Intelliworks-Pms-bvt-uks"
+      "rgName": {
+        "value": "MyResourceGroup"
       }
     }
   }
+  
+  has context menu
