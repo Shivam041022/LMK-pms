@@ -1,10 +1,7 @@
-// targetScope='subscription'
-
-param resourceGroup object
-param tags object
+param location string = resourceGroup().location
+param rgName string = 'MyResourceGroup'
 
 resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
-  name: resourceGroup.name
-  location: resourceGroup.location
-  tags: tags
+  name: rgName
+  location: location
 }
