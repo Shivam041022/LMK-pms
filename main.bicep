@@ -10,10 +10,10 @@ param appName string = 'fnapp${uniqueString(resourceGroup().id)}'
 param storageAccountType string = 'Standard_LRS'
 
 @description('Location for all resources.')
-param location string = resourceGroup().location
+param location string = "East US"
 
 @description('Location for Application Insights')
-param location string  = applicationInsights().location
+param location string  = "East US"
 
 @description('The language worker runtime to load in the function app.')
 @allowed([
@@ -44,7 +44,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 
 resource hostingPlan 'Microsoft.Web/serverfarms@2021-03-01' = {
   name: hostingPlanName
-  location: location
+  location: "East US"
   sku: {
     name: 'Y1'
     tier: 'Dynamic'
