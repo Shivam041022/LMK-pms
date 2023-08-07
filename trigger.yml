@@ -7,8 +7,8 @@ variables:
   vmImageName: 'ubuntu-latest'
 
   azureServiceConnection: '<FA-conn>'
-  resourceGroupName: 'LandMark-PCP'
-  location: 'East US '
+  resourceGroupName: 'Test'
+  location: "East US"
   templateFile: './main.bicep'
 pool:
   vmImage: "ubuntu-latest"
