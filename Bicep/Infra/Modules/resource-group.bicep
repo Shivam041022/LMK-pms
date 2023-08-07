@@ -1,4 +1,4 @@
-targetScope='subscription'
+// targetScope='subscription'
 
 param resourceGroup object
 param tags object

@@ -1,4 +1,4 @@
-targetScope = 'subscription'
+//targetScope = 'subscription'
 
 param resourceGroupUKSParam object
 param tagsParam object = {}
