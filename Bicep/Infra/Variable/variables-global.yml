@@ -1,6 +1,5 @@
 variables:
-  serviceConnectionName: eng-coreservices-spooadapaterservice-dev
-
+  serviceConnectionName: Functest
   schemaServiceAppIdUri: api://eng-core-bvt-schema-service-functionapp-internal-permissions
   #schemaServiceUrl:
   tags.environment: BVT
