@@ -4,23 +4,23 @@
   "parameters": {
     "tagsParam": {
       "value": {
-        "application": "#{tags.application}#",
-        "businessArea": "#{tags.businessArea}#",
-        "dataClassification": "#{tags.dataClassification}#",
-        "environment": "#{tags.environment}#",
-        "version": "#{tags.version}#"
+        "application": "Core services",
+        "businessArea": "Quill",
+        "dataClassification": "Company external",
+        "environment": "BVT",
+        "version": "Number#"
       }
     },
     "resourceGroupUKSParam": {
       "value": {
-        "name": "#{resourceGroupUKS.name}#",
-        "location": "#{resourceGroupUKS.location}#"
+        "name": "Intelliworks-Pms-bvt-uks",
+        "location": "UK South"
       }
     },
     "resourceGroupUKWParam": {
       "value": {
-        "name": "#{resourceGroupUKW.name}#",
-        "location": "#{resourceGroupUKW.location}#"
+        "name": "Intelliworks-Pms-bvt-ukw",
+        "location": "UK West"
       }
     },
     "logAnalyticsParam": {
