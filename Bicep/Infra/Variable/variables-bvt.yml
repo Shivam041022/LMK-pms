@@ -1,0 +1,65 @@
+variables:
+  serviceConnectionName: eng-coreservices-spooadapaterservice-dev
+
+  schemaServiceAppIdUri: api://eng-core-bvt-schema-service-functionapp-internal-permissions
+ # schemaServiceUrl: https://bvt-api-internal.landmarkcloudservices.com/schema
+
+  tags.environment: BVT
+
+  resourceGroupUKS.name: core-bvt-spoo-adapter-uks
+  resourceGroupUKS.location: uksouth
+
+  resourceGroupUKW.name: core-bvt-spoo-adapter-ukw
+  resourceGroupUKW.location: ukwest
+
+  # logAnalytics.name: core-bvt-spoo-adapter-loganalytics-uks
+  # logAnalytics.retentionInDays: 30
+  # logAnalytics.dailyQuotaGb: 1
+  # logAnalytics.resourceGroup: $(resourceGroupUKS.name)
+
+  # applicationInsights.name: core-bvt-spoo-adapter-appinsights-uks
+  # applicationInsights.resourceGroup: $(resourceGroupUKS.name)
+
+  # functionAppUKS.name: core-bvt-spoo-adapter-functionapp-uks
+  # functionAppUKS.serverFarm.name: core-bvt-spoo-adapter-serverfarm-uks
+  # functionAppUKS.storageAccount.name: corebvtspooadaptfasauks
+
+  # functionAppUKW.name: core-bvt-spoo-adapter-functionapp-ukw
+  # functionAppUKW.serverFarm.name: core-bvt-spoo-adapter-serverfarm-ukw
+  # functionAppUKW.storageAccount.name: corebvtspooadaptfasaukw
+
+  # productRoutingUKS.url: lmk-bvt-spoo-httpfunctions
+  # productRoutingUKW.url: lmk-bvt-spoo-httpfunctions
+
+  # herokuApiUKS.url: lmk-bvt-point-of-order
+  # herokuApiUKW.url: lmk-bvt-point-of-order
+
+  # keyVault.name: corebvtspooadapterkvuks
+  # keyVault.devopsServicePrincipalId: e1c380a9-0a15-4339-be24-9184ec73464c
+
+  # storageAccount.name: corebvtspooadaptersauks
+
+  # functionAppSettings.orderv2ServiceTokenIssuer: api://eng-core-bvt-order-functionapp-internal-permissions
+  # functionAppSettings.orderv2ServiceUrl: https://bvt-api-internal.landmarkcloudservices.com/orders/
+  # functionAppSettings.productRoutingHeaderKeyName: x-functions-key
+  # functionAppSettings.herokuApiHeaderKeyName: Ocp-Apim-Subscription-Key
+  # functionAppSettings.accountServiceTokenIssuer: api://eng-ea-bvt-group-identity-int-herokuapp-permissions
+  # functionAppSettings.accountServiceUrl: https://bvt-api-internal.landmarkcloudservices.com/identities/
+  # functionAppSettings.xifSearchFlowOrderInitializeLogicAppUrl: https://prod-00.northeurope.logic.azure.com:443/workflows/8451742327194a3c9ca0ca60a3795663/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=V1AWVNt_7XQbJRlIIO9Js1IWomm9MF8HeM1IgSXoVd0
+  # functionAppSettings.xifSearchFlowSandboxOrderInitializeLogicAppUrl: https://prod-08.northeurope.logic.azure.com:443/workflows/8f03490d81d748f9998da0db50bbccd2/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=W31UgQ1r2Sq1gt0xvXj9YHHtCsqxQCSedrITniatfzI
+  # functionAppSettings.xifVerifyBasicAuthFunctionUrl: https://BVTXIFOrderFunctionApp.azurewebsites.net/api/verifyBasicAuth
+  # functionAppSettings.ApplicationId: a5b009eb-9879-4d7c-83a4-0bf669ea0130
+  # functionAppSettings.InitializeOrderBlobContainerName: orders
+  # functionAppSettings.SPOOBlobEndpoint: https://corebvtspooadaptersauks.blob.core.windows.net/
+  
+  # functionAppSettings.isEventServiceEnable: true
+  # functionAppSettings.serviceBusNamespaceUrl: core-bvt-event-servicebus-uks.servicebus.windows.net
+  # functionAppSettings.schemaServiceUrl: https://bvt-api-internal.landmarkcloudservices.com/schema
+  # functionAppSettings.schemaServiceAppIdUri: api://eng-core-bvt-schema-service-functionapp-internal-permissions
+
+  # functionAppSettings.documentServiceUrl: https://bvt-api-internal.landmarkcloudservices.com/documents
+  # functionAppSettings.documentServiceTokenIssuer: api://eng-core-bvt-document-functionapp-internal-permissions
+  # functionAppSettings.productDefinitionServiceTokenIssuer: api://eng-core-bvt-pod-functionapp-internal-permissions
+  # functionAppSettings.productDefinitionServiceUrl: https://bvt-api-internal.landmarkcloudservices.com/product-orchestration-definitions/
+
+  # functionAppSettings.promapBaseUri: https://int-api.promap.co.uk/
