@@ -6,10 +6,10 @@ variables:
 
   tags.environment: BVT
 
-  resourceGroupUKS.name: core-bvt-spoo-adapter-uks
+  resourceGroupUKS.name: Intelliworks-Pms-bvt-uks
   resourceGroupUKS.location: uksouth
 
-  resourceGroupUKW.name: core-bvt-spoo-adapter-ukw
+  resourceGroupUKW.name: Intelliworks-Pms-bvt-ukw
   resourceGroupUKW.location: ukwest
 
   # logAnalytics.name: core-bvt-spoo-adapter-loganalytics-uks
