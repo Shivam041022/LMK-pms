@@ -9,7 +9,7 @@ variables:
   azureServiceConnection: 'TestFA'
   resourceGroupName: 'TestRG'
   location: 'UK South'
-  templateFile: './Test.bicep'
+  templateFile: '../Test.bicep'
 pool:
   vmImage: $(vmImageName)
 
@@ -23,7 +23,7 @@ steps:
     resourceGroupName: 'TestRG'
     location: 'UK South'
     templateLocation: 'Linked artifact'
-    csmFile: './Test.bicep'
+    csmFile: '../Test.bicep'
     #overrideParameters: '-storageAccountType Standard_LRS'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
