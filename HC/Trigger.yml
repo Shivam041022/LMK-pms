@@ -14,7 +14,7 @@ pool:
   vmImage: $(vmImageName)
 
 steps:
-- task: AzureResourceGroupTemplateDeployment@2
+- task: AzureResourceManagerTemplateDeployment@2
   inputs:
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: 'TestFA'
