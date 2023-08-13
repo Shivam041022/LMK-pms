@@ -6,9 +6,9 @@ name: Deploy Bicep files
 variables:
   vmImageName: 'ubuntu-latest'
 
-  azureServiceConnection: 'Functest'
+  azureServiceConnection: 'TestFA'
   resourceGroupName: 'TestRG'
-  location: 'East US'
+  location: 'UK South'
   templateFile: './main.bicep'
 pool:
   vmImage: $(vmImageName)
@@ -17,10 +17,10 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Functest'
+    azureResourceManagerConnection: 'TestFA'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'TestRG'
-    location: 'East US'
+    location: 'UK South'
     templateLocation: 'Linked artifact'
     csmFile: './main.bicep'
     #overrideParameters: '-storageAccountType Standard_LRS'
