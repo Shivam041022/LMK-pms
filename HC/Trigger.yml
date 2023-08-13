@@ -16,6 +16,7 @@ pool:
 steps:
 - task: AzureResourceManagerTemplateDeployment@1
   inputs:
+    ConnectedServiceName: 'TestFA'
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: 'TestFA'
     action: 'Create Or Update Resource Group'
