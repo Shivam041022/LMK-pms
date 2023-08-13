@@ -22,7 +22,7 @@ steps:
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'TestRG'
     location: 'UK South'
-    templateLocation: 'Linked artifact'
+    #templateLocation: 'Linked artifact'
     csmFile: 'Test.bicep'
     #overrideParameters: '-storageAccountType Standard_LRS'
     deploymentMode: 'Incremental'
