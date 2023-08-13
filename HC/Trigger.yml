@@ -5,11 +5,16 @@ name: Deploy Bicep files
 
 variables:
   vmImageName: 'windows-latest'
+  
+paths: 
+  include: 
+  - LMK-pms/trigger.yaml
 
   azureServiceConnection: 'TestFA'
   resourceGroupName: 'TestRG'
   location: 'UK South'
   templateFile: 'LMK-pms/Test.bicep'
+
 
 pool:
   vmImage: $(vmImageName)
