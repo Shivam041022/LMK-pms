@@ -6,14 +6,11 @@ name: Deploy Bicep files
 variables:
   vmImageName: 'windows-latest'
   
-paths: 
-  include: 
-  - LMK-pms/trigger.yaml
 
   azureServiceConnection: 'TestFA'
   resourceGroupName: 'TestRG'
   location: 'UK South'
-  templateFile: 'LMK-pms/Test.bicep'
+  templateFile: 'HC/LMK-pms/Test.bicep'
 
 
 pool:
@@ -29,7 +26,7 @@ steps:
     resourceGroupName: 'TestRG'
     location: 'UK South'
     #templateLocation: 'Linked artifact'
-    csmFile: 'LMK-pms/Test.bicep'
+    csmFile: 'HC/LMK-pms/Test.bicep'
     #overrideParameters: '-storageAccountType Standard_LRS'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
