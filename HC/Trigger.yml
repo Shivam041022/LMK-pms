@@ -9,7 +9,7 @@ variables:
   azureServiceConnection: 'TestFA'
   resourceGroupName: 'TestRG'
   location: 'UK South'
-  templateFile: './main.bicep'
+  templateFile: './Test.bicep'
 pool:
   vmImage: $(vmImageName)
 
