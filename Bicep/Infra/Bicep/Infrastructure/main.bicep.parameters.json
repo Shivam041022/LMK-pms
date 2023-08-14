@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tagsParam": {
+      "value": {
+        "application": "Core services",
+        "businessArea": "Quill",
+        "dataClassification": "Company external",
+        "environment": "BVT",
+        "version": "Number#"
+      }
+    },
+    "resourceGroupUKSParam": {
+      "value": {
+        "name": "#{resourceGroupUKS.name}#",
+        "location": "#{resourceGroupUKS.location}#"
+      }
+    },
+    "resourceGroupUKWParam": {
+      "value": {
+        "name": "#{resourceGroupUKW.name}#",
+        "location": "#{resourceGroupUKW.location}#"
+      }
+    },
+    "logAnalyticsParam": {
+      "value": {
+        "name": "#{logAnalytics.name}#",
+        "retentionInDays": "#{logAnalytics.retentionInDays}#",
+        "dailyQuotaGb": "#{logAnalytics.dailyQuotaGb}#",
+        "resourceGroup": "#{logAnalytics.resourceGroup}#"
+      }
+    },
+    "applicationInsightsParam": {
+      "value": {
+        "name": "#{applicationInsights.name}#",
+        "resourceGroup": "#{applicationInsights.resourceGroup}#"
+        
+      }
+    },
+    "functionAppUKSParam": {
+      "value": {
+        "name": "#{functionAppUKS.name}#",
+        "serverFarm": {
+          "name": "#{functionAppUKS.serverFarm.name}#"
+        },
+        "storageAccount": {
+          "name": "#{functionAppUKS.storageAccount.name}#"
+        }
+      }
+    },
+    "functionAppUKWParam": {
+      "value": {
+        "name": "#{functionAppUKW.name}#",
+        "serverFarm": {
+          "name": "#{functionAppUKW.serverFarm.name}#"
+        },
+        "storageAccount": {
+          "name": "#{functionAppUKW.storageAccount.name}#"
+        }
+      }
+    },
+    "storageAccountParam": {
+      "value": {
+        "name": "#{storageAccount.name}#"
+      }
+    },
+    "keyVaultParam": {
+      "value": {
+        "name": "#{keyVault.name}#",
+        "devopsServicePrincipalId": "#{keyVault.devopsServicePrincipalId}#"
+      }
+    }
+  }
+}

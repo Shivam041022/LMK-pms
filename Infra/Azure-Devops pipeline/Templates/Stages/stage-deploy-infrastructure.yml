@@ -1,0 +1,73 @@
+parameters:
+- name: name
+  displayName: Stage Name
+  type: string
+
+- name: displayName
+  displayName: Stage Display Name
+  type: string
+
+- name: dependsOn
+  displayName: Depends On
+  type: object
+  default: ''
+
+- name: condition
+  displayName: Condition
+  type: string
+  default: ''
+
+- name: variables
+  displayName: Variables
+  type: object
+  default: ''
+
+- name: environment
+  displayName: Environment
+  type: string
+
+stages:
+- stage: ${{ parameters.name }}
+  displayName: ${{ parameters.displayName }}
+  ${{ if not(eq(parameters.dependsOn, '')) }}:
+    dependsOn: ${{ parameters.dependsOn }}
+  ${{ if not(eq(parameters.condition, '')) }}:
+    condition: ${{ parameters.condition }}
+  ${{ if not(eq(parameters.variables, '')) }}:
+    variables: ${{ parameters.variables }}
+  jobs:
+  - deployment: Deploy_Bicep_Templates
+    displayName: Deploy Bicep Templates
+    environment: ${{ parameters.environment }}
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: replacetokens@5
+            name: Update_Bicep_Parameters_File
+            displayName: Update Bicep Parameters File
+            inputs:
+              targetFiles: $(Pipeline.Workspace)/bicepTemplates/main.bicep.parameters.json
+              encoding: auto
+              tokenPattern: default
+              writeBOM: true
+              escapeType: none
+              verbosity: detailed
+              actionOnMissing: warn
+              keepToken: false
+              actionOnNoFiles: warn
+              enableTransforms: false
+              enableRecursion: false
+              useLegacyPattern: false
+              enableTelemetry: false
+          
+          - task: AzureCLI@2
+            name: Deploy_Bicep_Template
+            displayName: Deploy Bicep Template
+            inputs:
+              azureSubscription: ${{ variables.serviceConnectionName }}
+              scriptType: bash
+              scriptLocation: inlineScript
+              inlineScript: |
+                az deployment sub create --location uksouth --template-file bicepTemplates/main.bicep --parameters bicepTemplates/main.bicep.parameters.json
+              workingDirectory: $(Pipeline.Workspace)

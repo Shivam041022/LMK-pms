@@ -1,0 +1,24 @@
+variables:
+  bicepTemplatesSourceFolder: $(Build.Repository.LocalPath)/ochresoft--intelliworks--pms-api/Infra/Bicep/Infrastructure
+  bicepAppSettingsTemplatesSourceFolder: $(Build.Repository.LocalPath)/ochresoft--intelliworks--pms-api/Infra/Bicep/AppSettings
+  deploymentScriptsSourceFolder: $(Build.Repository.LocalPath)/ochresoft--intelliworks--pms-api/Infra/Scripts
+  functionAppSourceFolder: $(Build.Repository.LocalPath)/ochresoft--intelliworks--pms-api.FunctionApp
+  integrationTestsSourceFolder: $(Build.Repository.LocalPath)/CoreService.SPOOAdapterService.IntegrationTests
+
+  unitTestsProject: $(Build.Repository.LocalPath)/CoreService.SPOOAdapterService.UnitTests/CoreService.SPOOAdapterService.UnitTests.csproj
+  functionAppProject: $(Build.Repository.LocalPath)/CoreService.SPOOAdapterService.FunctionApp/CoreService.SPOOAdapterService.FunctionApp.csproj
+
+  # apiTestsCollectionFile: CoreService.SPOOAdapterService.postman_collection.json
+  # apiTestLocalEnvironmentFile: CoreService.SPOOAdapterService-Local.postman_environment.json 
+  # apiTestDevOpsEnvironmentFile: CoreService.SPOOAdapterService-AzureDevOps.postman_environment.json
+
+  nugetConfigPath: $(Build.Repository.LocalPath)/nuget.config
+  dotNetVersion: 6.x
+
+  tags.application: ochresoft--intelliworks--pms-api
+  tags.businessArea: Core-Services
+  tags.dataClassification: Company External
+  tags.version: $(Build.BuildNumber)
+
+  ##### Events schema folder
+  # eventSchemasDirectory: $(Build.Repository.LocalPath)/CoreService.SPOOAdapterService.FunctionApp/Validation/Schema/

@@ -17,27 +17,27 @@ variables:
 pool:
   vmImage: $(vmImageName)
 
+steps:
+- task: AzureResourceManagerTemplateDeployment@1
+  inputs:
+    ConnectedServiceName: 'TestFA'
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'TestFA'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'TestRG'
+    location: 'UK South'
+    #templateLocation: 'Linked artifact'
+    csmFile: 'HC/LMK-pms/Test.bicep'
+    #overrideParameters: '-storageAccountType Standard_LRS'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
 
-- task: AzureCLI@2
-    inputs:
-      azureSubscription: 'TestFA'  # Replace with your Azure service connection name
-      scriptType: 'bash'
-      scriptLocation: 'inlineScript'
-      inlineScript: |
-        az login --service-principal -u $AZURE_CLIENT_ID -p "$AZURE_CLIENT_SECRET" --tenant $AZURE_TENANT_ID
-        az deployment group create --resource-group 'Intelliworks-Pms-bvt-uks' --template-file 'Bicep\Infra\main.bicep' --parameters 'Bicep\Infra\main.bicep.parameters.json'
+# - task: AzureCLI@2
+#     inputs:
+#       azureSubscription: 'TestFA'  # Replace with your Azure service connection name
+#       scriptType: 'bash'
+#       scriptLocation: 'inlineScript'
+#       inlineScript: |
+#         az login --service-principal -u $AZURE_CLIENT_ID -p "$AZURE_CLIENT_SECRET" --tenant $AZURE_TENANT_ID
+#         az deployment group create --resource-group 'Intelliworks-Pms-bvt-uks' --template-file 'Bicep\Infra\main.bicep' --parameters 'Bicep\Infra\main.bicep.parameters.json'
 
-# steps:
-# - task: AzureResourceManagerTemplateDeployment@1
-#   inputs:
-#     ConnectedServiceName: 'TestFA'
-#     deploymentScope: 'Resource Group'
-#     azureResourceManagerConnection: 'TestFA'
-#     action: 'Create Or Update Resource Group'
-#     resourceGroupName: 'TestRG'
-#     location: 'UK South'
-#     #templateLocation: 'Linked artifact'
-#     csmFile: 'HC/LMK-pms/Test.bicep'
-#     #overrideParameters: '-storageAccountType Standard_LRS'
-#     deploymentMode: 'Incremental'
-#     deploymentName: 'DeployPipelineTemplate'

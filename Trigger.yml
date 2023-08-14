@@ -1,0 +1,28 @@
+trigger:
+- main
+
+name: Deploy Bicep files
+
+variables:
+  vmImageName: 'ubuntu-latest'
+
+  azureServiceConnection: 'Ochresoft-BVT'
+  resourceGroupName: 'TestRG'
+  location: 'UK South'
+  templateFile: './main.bicep'
+pool:
+  vmImage: $(vmImageName)
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Ochresoft-BVT'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'TestRG'
+    location: 'UK South'
+    templateLocation: 'Linked artifact'
+    csmFile: './main.bicep'
+    #overrideParameters: '-storageAccountType Standard_LRS'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'

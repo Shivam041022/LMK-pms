@@ -1,0 +1,58 @@
+parameters:
+- name: name
+  displayName: Stage Name
+  type: string
+
+- name: displayName
+  displayName: Stage Display Name
+  type: string
+
+- name: dependsOn
+  displayName: Depends On
+  type: object
+  default: ''
+
+- name: condition
+  displayName: Condition
+  type: string
+  default: ''
+
+- name: variables
+  displayName: Variables
+  type: object
+  default: ''
+
+stages:
+- stage: ${{ parameters.name }}
+  displayName: ${{ parameters.displayName }}
+  ${{ if not(eq(parameters.dependsOn, '')) }}:
+    dependsOn: ${{ parameters.dependsOn }}
+  ${{ if not(eq(parameters.condition, '')) }}:
+    condition: ${{ parameters.condition }}
+  ${{ if not(eq(parameters.variables, '')) }}:
+    variables: ${{ parameters.variables }}
+  jobs:
+  - job: Validate_Publish_Bicep_Files
+    displayName: Validate & Publish Bicep Files
+    steps:
+    - task: CmdLine@2
+      name: Validate_Bicep_Template
+      displayName: Validate Bicep Template
+      inputs:
+        script: az bicep build --file ${{ variables.bicepTemplatesSourceFolder }}/main.bicep
+        failOnStderr: true
+    
+    - task: CmdLine@2
+      name: Validate_Bicep_Parameters_File
+      displayName: Validate Bicep Parameters File
+      inputs:
+        script: jq . ${{ variables.bicepTemplatesSourceFolder }}/main.bicep.parameters.json
+        failOnStderr: true
+    
+    - task: PublishBuildArtifacts@1
+      name: Publish_Bicep_Files
+      displayName: Publish Bicep Files
+      inputs:
+        PathtoPublish: ${{ variables.bicepTemplatesSourceFolder }}
+        ArtifactName: bicepTemplates
+        publishLocation: Container

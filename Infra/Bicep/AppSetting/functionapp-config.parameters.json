@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/parametersTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "tags": {
+        "value": {
+          "environment": "#{tags.environment}#",
+          "version": "#{tags.version}#"
+        }
+      },
+      "applicationInsights": {
+        "value": {
+          "name": "#{applicationInsights.name}#",
+          "resourceGroup": "#{applicationInsights.resourceGroup}#"
+        }
+      },
+      "functionApp": {
+        "value": {
+          "name": "#{functionAppName}#",
+          "storageAccount": {
+            "name": "#{functionAppStorageAccountName}#"
+          }
+        }
+      },
+      "functionAppSettings": {
+        "value": {
+          "AzureFunctionsWebHost__hostid": "#{functionAppSettings.AzureFunctionsWebHost__hostid}#",
+          "WEBSITE_CONTENTSHARE": "#{functionAppSettings.WEBSITE_CONTENTSHARE}#",
+          "Orderv2ServiceTokenIssuer": "#{functionAppSettings.orderv2ServiceTokenIssuer}#",
+          "Orderv2ServiceUrl": "#{functionAppSettings.orderv2ServiceUrl}#",
+          "ProductServiceUrl": "#{functionAppSettings.productServiceUrl}#",
+          "ProductRoutingHeaderKey": "#{functionAppSettings.productRoutingHeaderKey}#",
+          "ProductRoutingHeaderKeyName": "#{functionAppSettings.productRoutingHeaderKeyName}#",
+          "HerokuApiBaseUrl": "#{functionAppSettings.herokuApiBaseUrl}#",
+          "HerokuApiHeaderKeyName": "#{functionAppSettings.herokuApiHeaderKeyName}#",
+          "HerokuApiSubscriptionKey": "#{functionAppSettings.herokuApiSubscriptionKey}#",
+          "AccountServiceTokenIssuer": "#{functionAppSettings.accountServiceTokenIssuer}#",
+          "AccountServiceUrl": "#{functionAppSettings.accountServiceUrl}#",
+          "XifSearchFlowOrderInitializeLogicAppUrl": "#{functionAppSettings.xifSearchFlowOrderInitializeLogicAppUrl}#",
+          "XifSearchFlowSandboxApiManagementUserId": "#{functionAppSettings.xifSearchFlowSandboxApiManagementUserId}#",
+          "XifSearchFlowSandboxOrderInitializeLogicAppUrl": "#{functionAppSettings.xifSearchFlowSandboxOrderInitializeLogicAppUrl}#",
+          "XifVerifyBasicAuthFunctionApiKey": "#{functionAppSettings.xifVerifyBasicAuthFunctionApiKey}#",
+          "XifVerifyBasicAuthFunctionUrl": "#{functionAppSettings.xifVerifyBasicAuthFunctionUrl}#",
+          "ApplicationId": "#{functionAppSettings.ApplicationId}#",
+          "InitializeOrderBlobContainerName": "#{functionAppSettings.initializeOrderBlobContainerName}#",
+          "SPOOBlobEndpoint": "#{functionAppSettings.spooBlobEndpoint}#",
+          "IsEventServiceEnable":"#{functionAppSettings.isEventServiceEnable}#",
+          "ServiceBusNamespaceUrl": "#{functionAppSettings.serviceBusNamespaceUrl}#",
+          "NewtonsoftSchemaKey": "#{functionAppSettings.newtonsoftSchemaKey}#",
+          "SchemaServiceUrl":"#{functionAppSettings.schemaServiceUrl}#",
+          "SchemaServiceAppIdUri": "#{functionAppSettings.schemaServiceAppIdUri}#",
+          "DocumentServiceUrl":"#{functionAppSettings.documentServiceUrl}#",
+          "DocumentServiceTokenIssuer": "#{functionAppSettings.documentServiceTokenIssuer}#",
+          "ProductDefinitionServiceUrl": "#{functionAppSettings.productDefinitionServiceUrl}#",
+          "ProductDefinitionServiceTokenIssuer": "#{functionAppSettings.productDefinitionServiceTokenIssuer}#",
+          "PromapBaseUri": "#{functionAppSettings.promapBaseUri}#",
+          "PromapApiKey": "#{functionAppSettings.promapApiKey}#",
+          "KeyVault": "#{keyVault.name}#",
+          "Region": "#{functionAppSettings.region}#"
+        }
+      }
+    }
+  }
