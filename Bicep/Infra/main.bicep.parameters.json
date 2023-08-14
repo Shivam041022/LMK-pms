@@ -13,14 +13,14 @@
     },
     "resourceGroupUKSParam": {
       "value": {
-        "name": "Intelliworks-Pms-bvt-uks",
-        "location": "UK South"
+        "name": "#{resourceGroupUKS.name}#",
+        "location": "#{resourceGroupUKS.location}#"
       }
     },
     "resourceGroupUKWParam": {
       "value": {
-        "name": "Intelliworks-Pms-bvt-ukw",
-        "location": "UK West"
+        "name": "#{resourceGroupUKW.name}#",
+        "location": "#{resourceGroupUKW.location}#"
       }
     },
     "logAnalyticsParam": {

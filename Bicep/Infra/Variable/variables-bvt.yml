@@ -17,10 +17,10 @@ variables:
   # logAnalytics.dailyQuotaGb: 1
   # logAnalytics.resourceGroup: $(resourceGroupUKS.name)
 
-  # applicationInsights.name: core-bvt-spoo-adapter-appinsights-uks
+  # applicationInsights.name: intelliworks-Pms-uat-appinsights-uks
   # applicationInsights.resourceGroup: $(resourceGroupUKS.name)
 
-  # functionAppUKS.name: core-bvt-spoo-adapter-functionapp-uks
+  # functionAppUKS.name: Intelliworks-Pms-uat-uks
   # functionAppUKS.serverFarm.name: core-bvt-spoo-adapter-serverfarm-uks
   # functionAppUKS.storageAccount.name: corebvtspooadaptfasauks
 
