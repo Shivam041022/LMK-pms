@@ -1,5 +1,5 @@
 variables:
-  serviceConnectionName: Ochresoft-BVT
+  serviceConnectionName: TestFA
 
 
   schemaServiceAppIdUri: api://eng-core-bvt-schema-service-functionapp-internal-permissions
