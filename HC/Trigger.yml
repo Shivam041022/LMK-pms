@@ -3,9 +3,6 @@ trigger:
 
 name: Deploy Bicep files
 
-paths:
-    include:
-    - HC/LMK-pms/Test.bicep/*
 
 variables:
   vmImageName: 'windows-latest'
